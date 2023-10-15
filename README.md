@@ -1,2 +1,2 @@
 # Sruji-java
-My Java Repository for Demo/practice
+My Java Repository for my Demo/practice
