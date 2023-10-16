@@ -43,6 +43,7 @@ public class School {
         Student s10 = new Student(203,"Rem","Second");
         Student s11 = new Student(204,"Rem","Second");
         System.out.println(s10.equals(s11));
+        System.out.println(s10);
 
 
 

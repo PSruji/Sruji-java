@@ -1,4 +1,32 @@
-public class Student {
+import java.util.Objects;
+
+public final class Student implements Comparable<Student> {
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return rollno == student.rollno;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(rollno);
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" + "RollNumber=" + rollno + "Name: "+ name + "Grade:" + grade + '}';
+    }
+
+    public static void setStudentCount(int studentCount) {
+        Student.studentCount = studentCount;
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 
     private int rollno;
     private String name;
@@ -22,7 +50,7 @@ public class Student {
     public Student(int rollno, String name){
         this.rollno = rollno;
         this.name = name;
-        this.grade = grade;
+        this.grade = null;
         setStudentCount();
     }
 
@@ -57,4 +85,14 @@ public class Student {
         return grade;
     }
 
+    @Override
+    public int compareTo(Student o) {
+        if(this.rollno == o.rollno){
+            return 0;
+        }else if(o.rollno<this.rollno){
+            return -1;
+        }else{
+            return 1;
+        }
+    }
 }
