@@ -41,6 +41,8 @@ public class Test {
         String search = "sateesh";
         System.out.println(list1.contains(search));
         System.out.println(set1.contains(search));
+        System.out.println(set);
+
 
         // Loops usage Demo
 
